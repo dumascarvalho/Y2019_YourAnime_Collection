@@ -1,6 +1,6 @@
-<div style="clear: both;"></div>
-
-<div class="footer">Desenvolvido por: Dumas Morais de Carvalho</div>
+<footer>
+    Desenvolvido por Dumas Morais de Carvalho no Instituto Federal de São Paulo do Câmpus Hortolândia
+</footer>
 
 </body>
 

@@ -1,7 +1,7 @@
 <?php
 
-$pagina = "principal.php";
-$titulo = "YourAnime Collection";
+$pagina = "main.php";
+$titulo = "YourAnime Store";
 
 if (isset($_GET["pagina"])) {
     if ($_GET["pagina"] == "sobre") {
@@ -16,12 +16,12 @@ if (isset($_GET["pagina"])) {
 
 include("./includes/header.php");
 
+echo "<section>";
+
 include("./includes/sidebar.php");
 
-if (isset($_GET["pagina"])) {
-    echo $_GET["pagina"];
-}
-
 include("./pages/" . $pagina);
+
+echo "</section>";
 
 include("./includes/footer.php");

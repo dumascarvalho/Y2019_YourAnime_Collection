@@ -8,5 +8,6 @@
 </head>
 
 <body>
-
-    <div class="top">YourAnime Collection</div>
+    <header>
+        <?php echo $titulo; ?>
+    </header>

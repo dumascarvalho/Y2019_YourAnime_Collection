@@ -1,7 +1,8 @@
 <?php
 
-function openConnection($DB)
+function openConnection()
 {
+    $DB = "youranime_store";
     $DB_HOST = "localhost:3307";
     $DB_USER = "root";
     $DB_PASS = "";
