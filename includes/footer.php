@@ -1,5 +1,5 @@
 <footer>
-    Desenvolvido por Dumas Morais de Carvalho no Instituto Federal de São Paulo do Câmpus Hortolândia
+    Desenvolvido por Dumas Carvalho no Instituto Federal de São Paulo, Câmpus Hortolândia
 </footer>
 
 </body>

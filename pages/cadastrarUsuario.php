@@ -50,7 +50,7 @@
                 <tr>
                     <td>Nível de Acesso: </td>
                     <td>
-                        <select name="nivel" style="width: 150px">
+                        <select name="nivel" style="width: 150px" onchange="validarAdministrador(this)">
                             <option value="comum">Comum</option>
                             <option value="administrador">Administrador</option>
                         </select>
