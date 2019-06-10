@@ -9,18 +9,20 @@
         $senha = $_POST['senha'];
         $nivel = $_POST['nivel'];
 
-        $query = "INSERT INTO usuario (id_usuario, nome, email, usuario, senha, nivel_acesso)
-        VALUES (null, '$nome', '$email', '$usuario', '$senha', '$nivel')";
+        if (empty($nome) or empty($usuario) or empty($senha) or empty($nivel)) {
+            echo "<script type='text/javascript'>retornarPagina();</script>";
+        }
+
+        $query = "INSERT INTO usuario (nome, email, usuario, senha, nivel_acesso)
+        VALUES ('$nome', '$email', '$usuario', '$senha', '$nivel')";
 
         if (mysqli_query($conexao, $query)) {
             echo "Seu cadastro foi realizado com sucesso!";
             fecharConexao($conexao);
-
             echo "<br><br><a href='index.php?pagina=autenticar'>Clique aqui para poder realizar login.</a></li>";
         } else {
-            echo "Não foi possível realizar o cadastro, favor tentar novamente.";
+            echo ("Não foi possível realizar o cadastro, favor tentar novamente: " . mysqli_error($conexao));
             fecharConexao($conexao);
-
             echo "<br><br><a href='index.php?pagina=cadastrar'>Clique aqui para poder voltar a tela de cadastro.</a></li>";
         }
     } else {
@@ -65,7 +67,8 @@
             </table>
         </form>
 
-    <?php
-}
-?>
+        <?php
+        echo "<br><a href='index.php'>Clique aqui para poder voltar a tela principal.</a></li>";
+    }
+    ?>
 </article>

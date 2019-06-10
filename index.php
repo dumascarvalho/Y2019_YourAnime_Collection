@@ -7,7 +7,11 @@ if (isset($_GET["pagina"])) {
     switch ($_GET["pagina"]) {
         case "cadastrar":
             $pagina = "cadastrarUsuario.php";
-            $titulo = "Cadastro";
+            $titulo = "Tela de Cadastro";
+            break;
+        case "autenticar":
+            $pagina = "realizarLogin.php";
+            $titulo = "Tela de Login";
             break;
         default:
             $pagina = "main.php";

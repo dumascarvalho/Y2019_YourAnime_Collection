@@ -5,6 +5,7 @@
 <head>
     <title><?php echo $titulo; ?></title>
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/main.css'>
+    <script src='../scripts/main.js'></script>
 </head>
 
 <body>
