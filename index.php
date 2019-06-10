@@ -4,13 +4,14 @@ $pagina = "main.php";
 $titulo = "YourAnime Store";
 
 if (isset($_GET["pagina"])) {
-    if ($_GET["pagina"] == "sobre") {
-        $pagina = "sobre.php";
-        $titulo = "Sobre";
-    }
-    if ($_GET["pagina"] == "contatos") {
-        $pagina = "contatos.php";
-        $titulo = "Contatos";
+    switch ($_GET["pagina"]) {
+        case "cadastrar":
+            $pagina = "cadastrarUsuario.php";
+            $titulo = "Cadastro";
+            break;
+        default:
+            $pagina = "main.php";
+            $titulo = "YourAnime Store";
     }
 }
 
@@ -18,7 +19,7 @@ include("./includes/header.php");
 
 echo "<section>";
 
-include("./includes/sidebar.php");
+// include("./includes/sidebar.php");
 
 include("./pages/" . $pagina);
 

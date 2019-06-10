@@ -12,19 +12,32 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Akuma";
+    src: url("../fonts/akuma.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
+    color: black;
+    font-family: "Akuma";
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 header {
     height: 50px;
     background: #ddd;
-    font-family: "Kagura";
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     font-size: 300%;
     animation: fading 0.6s ease-in-out;
     animation-fill-mode: forwards;
@@ -50,11 +63,8 @@ aside ul {
 aside a {
     display: block;
     padding: 10%;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-    color: black;
-    font-family: "Kagura";
     font-size: 200%;
+    transition: all 0.3s ease-in-out;
 }
 
 aside a:hover:not(.active) {
@@ -66,8 +76,7 @@ article {
     background: lightblue;
     text-align: justify;
     padding: 10px;
-    font-family: "Kagura";
-    font-size: 200%;
+    font-size: 150%;
     animation: fading 0.6s ease-in-out;
     animation-fill-mode: forwards;
 }
@@ -75,9 +84,8 @@ article {
 footer {
     height: 30px;
     background: #ddd;
-    padding: 10px;
-    font-family: "Kagura";
-    font-size: 150%;
+    padding: 10px 10px 0 10px;
+    font-size: 100%;
 }
 
 @keyframes fading {

@@ -1,3 +1,8 @@
 <article>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis nulla eros, quis ultrices nisl eleifend ut. Maecenas dignissim leo a velit blandit volutpat. Cras quis risus metus. Proin laoreet scelerisque augue. Pellentesque nec sodales velit. Integer luctus magna nisi, sed consequat odio aliquet ac. Praesent eu dui ac ex molestie consectetur. Maecenas scelerisque commodo urna, a eleifend dolor semper ac. Aenean et nulla nec dui facilisis euismod vitae quis mi. Sed sollicitudin varius est quis posuere. Pellentesque eu diam sem. In commodo nulla ipsum, vestibulum mollis dui vestibulum vel.
+    Seja bem-vindo(a), como podemos te ajudar?
+    <ul>
+        <li><a href="index.php?pagina=autenticar">Já possuo um usuário cadastrado</a></li>
+        <li><a href="index.php?pagina=cadastrar">Ainda não realizei meu cadastro</a></li>
+        <li><a href="index.php?pagina=recuperar">Possuo cadastro, mas esqueci minha senha</a></li>
+    </ul>
 </article>

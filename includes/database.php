@@ -1,6 +1,6 @@
 <?php
 
-function openConnection()
+function abrirConexao()
 {
     $DB = "youranime_store";
     $DB_HOST = "localhost:3307";
@@ -12,13 +12,13 @@ function openConnection()
     if ($CONN->connect_error) {
         die("Não foi possível estabelecer conexão: " . $CONN->connect_error);
     } else {
-        echo "Conexão realizada com sucesso!";
+        echo "Conexão realizada com sucesso!<br>";
     }
 
     return $CONN;
 }
 
-function closeConnection($CONN)
+function fecharConexao($CONN)
 {
     $CONN->close();
     echo "<br>Conexão encerrada com sucesso!";
