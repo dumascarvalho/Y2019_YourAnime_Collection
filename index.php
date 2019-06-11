@@ -1,6 +1,6 @@
 <?php
 
-$pagina = "main.php";
+$pagina = "principal.php";
 $titulo = "YourAnime Store";
 
 if (isset($_GET["pagina"])) {
@@ -14,7 +14,7 @@ if (isset($_GET["pagina"])) {
             $titulo = "Tela de Login";
             break;
         default:
-            $pagina = "main.php";
+            $pagina = "principal.php";
             $titulo = "YourAnime Store";
     }
 }

@@ -18,8 +18,9 @@ function abrirConexao()
     return $CONN;
 }
 
-function fecharConexao($CONN)
+function fecharConexao($STMT, $CONN)
 {
+    $STMT->close();
     $CONN->close();
     echo "<br>Conexão encerrada com sucesso!";
 }

@@ -1,26 +1,31 @@
 <article>
     <?php if (isset($_POST['submit'])) {
         include("./includes/database.php");
-        $conexao = abrirConexao();
 
-        $usuario = $_POST['usuario'];
-        $senha = $_POST['senha'];
+        $mysqli = abrirConexao();
 
-        if (empty($usuario) or empty($senha)) {
-            echo "<script type='text/javascript'>retornarPagina();</script>";
-        }
+        $query = 'SELECT * FROM usuario 
+        WHERE usuario = ? and senha = ?';
 
-        $query = " SELECT * FROM usuario WHERE usuario = '$usuario' and senha = '$senha'";
+        $stmt = $mysqli->prepare($query);
 
-        $dados = mysqli_query($conexao, $query);
-        $linhas = mysqli_num_rows($dados);
+        $stmt->bind_param(
+            'ss',
+            $_POST['usuario'],
+            $_POST['senha'],
+        );
 
-        if ($linhas == true) {
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows) {
             echo "Usuário autenticado com sucesso!";
+            fecharConexao($stmt, $mysqli);
         } else {
             echo "Usuário ou senha inválidos.";
+            fecharConexao($stmt, $mysqli);
+            echo "<br><br><a href='index.php?pagina=autenticar' onclick='retornarPagina(); return false;'>Clique aqui para poder voltar a tela de login.</a></li>";
         }
-        fecharConexao($conexao);
     } else {
         ?>
         Certo! Por favor, informe os seus dados abaixo:
@@ -29,11 +34,11 @@
             <table>
                 <tr>
                     <td style="width: 150px">Usuário: </td>
-                    <td><input type="text" name="usuario" size="30" value=""></td>
+                    <td><input type="text" name="usuario" size="30" value="" required></td>
                 </tr>
                 <tr>
                     <td>Senha: </td>
-                    <td><input type="password" name="senha" size="30" value=""></td>
+                    <td><input type="password" name="senha" size="30" value="" required></td>
                 </tr>
                 <tr>
                     <td style="padding-top: 10px">
