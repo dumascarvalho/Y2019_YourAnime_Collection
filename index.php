@@ -1,7 +1,7 @@
 <?php
 
 $pagina = "principal.php";
-$titulo = "YourAnime Store";
+$titulo = "Tela Principal";
 
 if (isset($_GET["pagina"])) {
     switch ($_GET["pagina"]) {
@@ -23,8 +23,13 @@ if (isset($_GET["pagina"])) {
             break;
         default:
             $pagina = "principal.php";
-            $titulo = "YourAnime Store";
+            $titulo = "Tela Principal";
     }
+}
+
+if (((isset($_GET["pagina"])) and (isset($_COOKIE['usuario']))) and $_GET["pagina"] == "autenticado") {
+    $pagina = "usuarioAutenticado.php";
+    $titulo = "YourAnime Store";
 }
 
 include("./includes/header.php");

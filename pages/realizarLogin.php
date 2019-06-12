@@ -23,7 +23,7 @@
         if ($stmt->num_rows) {
             fecharConexao($stmt, $mysqli);
             setcookie('usuario', $usuario, null, '/');
-            header("Location:index.php");
+            header("Location:index.php?pagina=autenticado");
             exit;
         } else {
             echo "Usuário ou senha inválidos.";
