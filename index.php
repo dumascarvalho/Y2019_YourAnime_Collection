@@ -13,6 +13,10 @@ if (isset($_GET["pagina"])) {
             $pagina = "realizarLogin.php";
             $titulo = "Tela de Login";
             break;
+        case "recuperar":
+            $pagina = "recuperarSenha.php";
+            $titulo = "Tela de Recuperar Senha";
+            break;
         case "escolher":
             $pagina = "escolherProdutos.php";
             $titulo = "Tela de Produtos";

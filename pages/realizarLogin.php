@@ -18,11 +18,9 @@
         $stmt->execute();
         $stmt->store_result();
 
-        $usuario = $_POST['usuario'];
-
         if ($stmt->num_rows) {
             fecharConexao($stmt, $mysqli);
-            setcookie('usuario', $usuario, null, '/');
+            setcookie('usuario', $_POST['usuario'], null, '/');
             header("Location:index.php?pagina=autenticado");
             exit;
         } else {
@@ -48,7 +46,7 @@
                     <td style="padding-top: 10px">
                         <input type="reset" value="Limpar" style="width: 80px">
                     </td>
-                    <td style="paddin g- top: 10px">
+                    <td style="padding-top: 10px">
                         <input type="submit" value="Autenticar" name="submit" style="width: 80px; float: right">
                     </td>
                 </tr>
