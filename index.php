@@ -13,6 +13,14 @@ if (isset($_GET["pagina"])) {
             $pagina = "realizarLogin.php";
             $titulo = "Tela de Login";
             break;
+        case "escolher":
+            $pagina = "escolherProdutos.php";
+            $titulo = "Tela de Produtos";
+            break;
+        case "comprar":
+            $pagina = "realizarCompra.php";
+            $titulo = "Tela de Compra";
+            break;
         default:
             $pagina = "principal.php";
             $titulo = "YourAnime Store";
@@ -23,7 +31,11 @@ include("./includes/header.php");
 
 echo "<section>";
 
-// include("./includes/sidebar.php");
+session_start();
+
+if (isset($_SESSION['usuario'])) {
+    include("./includes/sidebar.php");
+}
 
 include("./pages/" . $pagina);
 

@@ -21,11 +21,11 @@
         if ($stmt->execute()) {
             echo "Seu cadastro foi realizado com sucesso!";
             fecharConexao($stmt, $mysqli);
-            echo "<br><br><a href='index.php?pagina=autenticar'>Clique aqui para poder realizar login.</a></li>";
+            echo "<br><br><a href='index.php?pagina=autenticar'>Clique aqui para poder realizar login.</a>";
         } else {
             echo ("Não foi possível realizar o cadastro, favor tentar novamente: " . mysqli_error($mysqli));
             fecharConexao($stmt, $mysqli);
-            echo "<br><br><a href='index.php?pagina=cadastrar' onclick='retornarPagina(); return false;'>Clique aqui para poder voltar a tela de cadastro.</a></li>";
+            echo "<br><br><a href='index.php?pagina=cadastrar' onclick='retornarPagina(); return false;'>Clique aqui para poder voltar a tela de cadastro.</a>";
         }
     } else {
         ?>
@@ -70,7 +70,7 @@
         </form>
 
         <?php
-        echo "<br><a href='index.php'>Clique aqui para poder voltar a tela principal.</a></li>";
+        echo "<br><a href='index.php'>Clique aqui para poder voltar a tela principal.</a>";
     }
     ?>
 </article>

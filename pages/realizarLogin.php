@@ -19,12 +19,17 @@
         $stmt->store_result();
 
         if ($stmt->num_rows) {
-            echo "Usuário autenticado com sucesso!";
+            echo "<script language='javascript' type='text/javascript'>
+            alert('Usuário autenticado com sucesso!');
+            </script>";
             fecharConexao($stmt, $mysqli);
+            session_start();
+            $_SESSION['usuario'] = $_POST['usuario'];
+            header("Location:index.php");
         } else {
             echo "Usuário ou senha inválidos.";
             fecharConexao($stmt, $mysqli);
-            echo "<br><br><a href='index.php?pagina=autenticar' onclick='retornarPagina(); return false;'>Clique aqui para poder voltar a tela de login.</a></li>";
+            echo "<br><br><a href='index.php?pagina=autenticar' onclick='retornarPagina(); return false;'>Clique aqui para poder voltar a tela de login.</a>";
         }
     } else {
         ?>
@@ -52,7 +57,7 @@
         </form>
 
         <?php
-        echo "<br><a href='index.php'>Clique aqui para poder voltar a tela principal.</a></li>";
+        echo "<br><a href='index.php'>Clique aqui para poder voltar a tela principal.</a>";
     }
     ?>
 </article>
