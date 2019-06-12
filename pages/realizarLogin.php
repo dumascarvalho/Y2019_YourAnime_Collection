@@ -18,14 +18,13 @@
         $stmt->execute();
         $stmt->store_result();
 
+        $usuario = $_POST['usuario'];
+
         if ($stmt->num_rows) {
-            echo "<script language='javascript' type='text/javascript'>
-            alert('Usuário autenticado com sucesso!');
-            </script>";
             fecharConexao($stmt, $mysqli);
-            session_start();
-            $_SESSION['usuario'] = $_POST['usuario'];
+            setcookie('usuario', $usuario, null, '/');
             header("Location:index.php");
+            exit;
         } else {
             echo "Usuário ou senha inválidos.";
             fecharConexao($stmt, $mysqli);

@@ -31,9 +31,7 @@ include("./includes/header.php");
 
 echo "<section>";
 
-session_start();
-
-if (isset($_SESSION['usuario'])) {
+if (isset($_COOKIE['usuario'])) {
     include("./includes/sidebar.php");
 }
 
