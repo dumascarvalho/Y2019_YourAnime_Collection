@@ -8,6 +8,7 @@ function abrirConexao()
     $DB_PASS = "";
 
     $CONN = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB);
+    mysqli_set_charset($CONN, "utf8");
 
     if ($CONN->connect_error) {
         die("Não foi possível estabelecer conexão: " . $CONN->connect_error);

@@ -34,12 +34,24 @@ a {
     color: black;
 }
 
+.tabelaProdutos {
+    width: 80%;
+}
+
+.tabelaProdutos td {
+    font-size: 70%;
+}
+
+.tabelaProdutos th {
+    font-size: 90%;
+}
+
 header {
     height: 50px;
     background: #ddd;
     padding: 0 10px 10px 10px;
     font-size: 300%;
-    animation: fading 0.6s ease-in-out;
+    animation: fading 0.9s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -77,7 +89,7 @@ article {
     text-align: justify;
     padding: 10px;
     font-size: 150%;
-    animation: fading 0.6s ease-in-out;
+    animation: fading 0.9s ease-in-out;
     animation-fill-mode: forwards;
 }
 
